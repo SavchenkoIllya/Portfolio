@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+@tailwind base;
+@tailwind components;
+
+@font-face {
+  font-family: "LT Terminal mono";
+  src: local("LT Terminal mono"),
+    url(./assets/font/LT-TerminalMono.woff) format("woff");
+}
+
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: "LT Terminal mono", monospace;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+.blink:hover {
+  opacity: 1;
+  animation: blink 0.2s infinite 0.1s;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.stretch {
+  margin-left: 250px;
+  display: inline-block;
+  transform: scale(2, 1);
+}
+
+.active {
+  background-color: rgb(34 197 94);
+  color: white;
+}
+
+.reveal {
+  opacity: 1;
+  animation: view 3s;
+}
+
+@keyframes view {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.special-blink {
+  opacity: 1;
+  animation: blink 0.2s infinite 0.1s;
+}
+
+.preloader {
+  overflow-wrap: break-word;
+  transform: scaleY(2.5);
+  animation: stretch 2s infinite 0.1s;
+}
+
+@media (max-width: 1090px) {
+  .preloader {
+    line-height: 0.8;
+    transform: scaleY(1);
+    animation: stretch-mobile 2s infinite 0.1s;
+  }
+  @keyframes stretch-mobile {
+    0% {
+      transform: scaleY(1.5);
+    }
+    50% {
+      transform: scaleY(1);
+    }
+    100% {
+      transform: scaleY(1.5);
+    }
+  }
+}
+
+.preloader-two {
+  letter-spacing: 5rem;
+  transform: scaleY(1.7);
+  text-align: left;
+  animation: stretch-two 2s infinite 0.1s;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scaleY(2.5);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(2.5);
+  }
+}
+
+@keyframes stretch-two {
+  0% {
+    text-align: left;
+    letter-spacing: 5rem;
+  }
+  50% {
+    text-align: end;
+    letter-spacing: 1rem;
+  }
+  100% {
+    text-align: left;
+    letter-spacing: 5rem;
+  }
+}
+
+.remover {
+  animation: top 4s;
+}
+
+@keyframes top {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -2000px;
+  }
+}
