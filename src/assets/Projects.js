@@ -1,12 +1,13 @@
 //pictures
-import delivery from "../assets/image.webp";
-import me from "../assets/avatar.png";
+import delivery from "../assets/delivery.webp";
+import portfolio from "../assets/portfolio.webp";
+import linkify from "../assets/linkify.webp";
 
 export const Projects = [
   {
     name: "DeliVery",
     description: "Small delivery e-commerce web site",
-    stack: "React, Firebase, Firestore",
+    stack: "React, Firebase, Firestore, Firestore Hoscting",
     link: "https://delivery-app-95f21.firebaseapp.com/",
     github: "https://github.com/SavchenkoIllya/DeliVery",
     img: delivery,
@@ -16,8 +17,13 @@ export const Projects = [
     description: "Web application for saving and sharing helpfull links",
     stack: "Angular, NodeJS, Express, FLutter, MongoDB",
     github: "https://github.com/SavchenkoIllya/Linkify-app-web",
-    img: delivery,
+    img: linkify,
+  },
+  {
+    name: "Portfolio",
+    description: "Current portfolio app",
+    stack: "React, Firebase Hosting",
+    github: "https://github.com/SavchenkoIllya/Portfolio",
+    img: portfolio,
   },
 ];
-
-export const Pictures = [{ name: "avatar", img: me }];
