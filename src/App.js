@@ -25,6 +25,7 @@ function App() {
   }, [loading]);
 
   useEffect(() => {
+    console.log('ok')
     const onPageLoad = () => {
       setLoading(true);
     };
@@ -47,7 +48,7 @@ function App() {
       // Remove the event listener when component unmounts
       return () => window.removeEventListener("load", onPageLoad);
     }
-  }, [preloader]);
+  });
 
   return (
     <>

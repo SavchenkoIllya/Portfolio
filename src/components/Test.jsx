@@ -8,18 +8,31 @@ import video from ".././assets/video.mp4";
 
 export default function Test() {
   useEffect(() => {
-    aalib.read.video
-      .fromVideoElement(document.querySelector("video"), { autoplay: true })
-      .map(aalib.aa({ width: 100, height: 100 }))
-      .map(
-        aalib.render.canvas({
-          width: 400,
-          height: 700,
-          el: document.querySelector("#video-scene"),
-        })
-      )
-      .subscribe();
+    const script = document.createElement("script");
+
+    script.src = "../assets/ascii.js";
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
   }, []);
+
+  // useEffect(() => {
+  //   aalib.read.video
+  //     .fromVideoElement(document.querySelector("video"), { autoplay: true })
+  //     .map(aalib.aa({ width: 100, height: 100 }))
+  //     .map(
+  //       aalib.render.canvas({
+  //         width: 400,
+  //         height: 700,
+  //         el: document.querySelector("#video-scene"),
+  //       })
+  //     )
+  //     .subscribe();
+  // }, []);
 
   return (
     <div className="flex items-end">
@@ -27,6 +40,7 @@ export default function Test() {
         <video src={video} className="relative w-0 h-0" muted loop></video>
       </div>
       <canvas id="video-scene" className="my-auto"></canvas>
+      <div id="scene"></div>
     </div>
   );
 }
